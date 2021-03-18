@@ -6,7 +6,7 @@ export default function AssetCard ({ item }) {
   const prevItem = usePrevious(item)
   useEffect(() => {
     if (prevItem && prevItem.priceUsd !== item.priceUsd) {
-      console.log(prevItem, item)
+      // console.log(prevItem, item)
     }
   }, [item, prevItem])
   return (
