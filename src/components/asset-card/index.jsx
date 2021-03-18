@@ -1,6 +1,14 @@
+import { useEffect } from 'react'
 import cx from 'classnames'
+import usePrevious from '@/hooks/use-previous'
 
 export default function AssetCard ({ item }) {
+  const prevItem = usePrevious(item)
+  useEffect(() => {
+    if (prevItem && prevItem.priceUsd !== item.priceUsd) {
+      console.log(prevItem, item)
+    }
+  }, [item, prevItem])
   return (
     <div className="shadow cursor-pointer bg-white rounded p-2 flex flex-row">
       <div className="flex flex-col flex-1">
